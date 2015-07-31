@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Слайд-шоу</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div#show button{
+padding: 10px;
+margin-right: 10px;
+cursor: pointer;
+background-color: silver;
+border: 1px solid black;
+	}
+	div#show button:hover{
+background: #dfd;
+border: 1px solid gray;
+	}
+	body{
+		width: 400px;
+		margin: 100px auto 0;
+	}
+	div.view{
+		height: 200px;
+		width: inherit;
+		overflow: hidden;
+	}
+	div.view ul{
+		list-style: none;
+		width: 10000px;
+	}
+	div.view li{
+		float: left;
+	}
+	</style>
+	<script type="text/javascript">
+	var myImgAlt = "Picture number ";
+	var aImgs = [
+	{alt: myImgAlt + "1", src: "img/red.gif"},
+	{alt: myImgAlt + "2", src: "img/green.gif"},
+	{alt: myImgAlt + "3", src: "img/blue.gif"},
+	{alt: myImgAlt + "4", src: "img/yellow.gif"},
+	];
+	</script>
+	<script type="" id="myTpl">
+<li><img src="{{src}}" alt="{{alt}}"></li>
+	</script>
+</head>
+<body>
+<div class="view">
+	<ul>
+		<li><img src="img/red.gif" alt=""></li>
+		<li><img src="img/green.gif" alt=""></li>
+		<li><img src="img/blue.gif" alt=""></li>
+		<li><img src="img/yellow.gif" alt=""></li>
+	</ul>
+</div>
+<div id="show">
+	<button id="prev">Назад</button>
+	<button id="next">Вперед</button>
+</div>
+<script src="../lib/jquery.js" type="text/javascript"></script>
+<script src="slide-show.js"></script>
+<script>
+
+</script>
+</body>
+</html>

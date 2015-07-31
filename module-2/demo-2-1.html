@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>События</title>
+		<script src="../lib/jquery.js" type="text/javascript"></script>
+		<script>
+			$(function(){
+
+				$("#toggle").on("click", function(){
+					$("#box").toggle();
+});
+				$("#box").on("click", function(){
+					$("#toggle").trigger("click");
+				});
+				$(window).on("resize scroll", function(){
+					console.log("here");
+				});
+				$("*").add([document, window]).on("click", function(){
+					e.stopPropagation();
+				});
+				// 	if($("#box").is(":visible")){
+				// 		$("#box").hide();
+				// 		$(this).text("show");
+				// 	}else{
+				// 		$("#box").show();
+				// 		$(this).text("hide");
+				// 	}
+				// });
+				// $("button").on("click", function(){
+				// 	$(this).text("Clicked");
+				// });
+			// function toogle(obj){
+			// 	obj.siblings("button").removeAttr("disabled").end().attr("disabled", "disabled");
+			// }
+			// $('#hide').on("click", function(){
+			// 	$("#box").hide();
+			// 	toogle($(this));
+				// $(this).attr("disabled", "disabled");
+				// $(this).siblings("button").removeAttr("disabled");
+
+			// });
+			// $('#show').on("click", function(){
+			// 	$('#box').show();
+			// 	toogle($(this));
+				// $(this).attr("disabled", "disabled");
+				// $(this).siblings("button").removeAttr("disabled");
+		
+			});
+		</script>
+		<style>
+			div #box{
+				width: 50%; margin: auto; border: 3px dotted green; text-align: center;
+	float: center;
+			}
+			div #buttons{
+				width: 50%; margin: auto;
+				position: center;}
+		</style>
+	</head>
+	<body>
+	<div id="buttons">
+		<button id="toggle">Turn on/off</button>
+		<!-- <button id="hide">Hide</button>
+		<button id="show">Show</button> -->
+	<div>
+	<div id="box">
+		<h1>Привет всем!</h1>
+	</div>
+	</body>
+</html>
